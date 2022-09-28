@@ -275,11 +275,9 @@ from flask import *
 
 
 from pyngrok import ngrok
-port_no = 5000
+port_no = 80
 
 app = Flask(__name__)
-ngrok.set_auth_token("2FJytbBUBe5osQBPFZ8Q6u3vZJl_921AXFo5spFsLCRbjgDk")
-public_url =  ngrok.connect(port_no).public_url
 
 @app.route("/")
 def home():
@@ -294,7 +292,7 @@ def result():
   
   return render_template("final.html")
 
-print(f"To acces the Gloable link please click {public_url}")
+
 
 app.run(port=port_no)
 
